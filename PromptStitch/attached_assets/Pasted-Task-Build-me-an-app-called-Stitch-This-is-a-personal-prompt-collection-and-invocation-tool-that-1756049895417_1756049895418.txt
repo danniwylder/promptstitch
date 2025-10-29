@@ -1,0 +1,95 @@
+Task:
+Build me an app called “Stitch”. This is a personal prompt collection and invocation tool that allows me to:
+
+Store prompts in a library.
+
+Invoke prompts directly into external AI apps (ChatGPT, Claude, Gemini, DeepSeek, etc.).
+
+Organize prompts into categories.
+
+Create and experiment with prompts in a built-in editor.
+
+Sync across platforms (Android app and Chrome browser extension).
+
+App Requirements
+
+Homepage
+
+Title: “Stitch” with a glowing cyberpunk-lofi logo (sacred geometry inspired).
+
+Navigation via clickable buttons:
+
+Invocations: list of saved prompts ready to copy/invoke in AI apps.
+
+Ilk: categories or folders of prompts (for example, coding, creative writing, OSINT, security, marketing).
+
+Alchemy: a “prompt lab” where I can write, test, and refine new prompts.
+
+Settings: account, sync, theme toggles, import/export prompts.
+
+Threads: past prompt usage history (logbook).
+
+Sigils: saved “favorite” prompts or special shortcuts.
+
+Conflux: cross-platform sync dashboard (sync between Android and Chrome extension).
+
+Features
+
+Prompt library: searchable, filterable, and taggable.
+
+One-click copy/invoke: tap a prompt and send it into ChatGPT/Claude/Gemini/etc.
+
+Categories (Ilk): hierarchical folders or tags.
+
+Prompt builder (Alchemy): markdown editor with syntax highlighting, auto-save, test panel.
+
+Import/export: JSON/YAML or markdown for backing up prompt collections.
+
+Cross-platform sync: Google Drive, Dropbox, or local encrypted storage option.
+
+Offline mode: app still works locally without cloud.
+
+Aesthetic
+
+Style: Lo-fi, sacred geometry, cyberpunk.
+
+Visuals: neon grid backgrounds, fractal or sigil-like iconography, subtle animation.
+
+Typography: NerdFont or FiraCode with glowing headers.
+
+UI: rounded corners, glowing borders, shadow depth.
+
+Themes: Dark (cyberpunk neon), Light (lofi muted pastels).
+
+Platforms
+
+Android App (built with React Native or Flutter).
+
+Chrome Extension (React with Manifest V3).
+
+Shared core library so both platforms use the same storage and UI components.
+
+Development Notes
+
+Use React/React Native plus Tailwind or ShadCN UI for consistency.
+
+Local storage plus optional cloud sync (Supabase, Firebase, or filesystem export).
+
+Use IndexedDB for Chrome extension storage.
+
+App architecture must be modular, supporting future expansion with AI API integrations (for example, direct API invocation instead of just copy-paste).
+
+Deliverables
+
+Generate the full project structure (folders, components, configs).
+
+Include homepage UI mockup code.
+
+Build stubs for Invocations, Ilk, Alchemy, Settings, Threads, Sigils, Conflux.
+
+Include example JSON schema for storing prompts.
+
+Suggest improvements along the way; act as a co-designer and not just a code generator.
+
+Extra requirement:
+Make the UI visually stunning. Animate transitions with Framer Motion, use glowing neon hover effects, subtle particle effects in backgrounds, and icons that resemble sacred geometry or cyberpunk glyphs.
