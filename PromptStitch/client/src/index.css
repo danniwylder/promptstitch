@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 100%, 6%);
+  --foreground: hsl(200, 20%, 91%);
+  --card: hsl(210, 100%, 8%);
+  --card-foreground: hsl(200, 20%, 91%);
+  --popover: hsl(210, 100%, 6%);
+  --popover-foreground: hsl(200, 20%, 91%);
+  --primary: hsl(195, 100%, 50%);
+  --primary-foreground: hsl(210, 100%, 6%);
+  --secondary: hsl(215, 25%, 27%);
+  --secondary-foreground: hsl(200, 20%, 91%);
+  --muted: hsl(215, 25%, 15%);
+  --muted-foreground: hsl(200, 10%, 60%);
+  --accent: hsl(259, 86%, 69%);
+  --accent-foreground: hsl(210, 100%, 6%);
+  --destructive: hsl(0, 75%, 60%);
+  --destructive-foreground: hsl(200, 20%, 91%);
+  --border: hsl(215, 25%, 20%);
+  --input: hsl(215, 25%, 18%);
+  --ring: hsl(195, 100%, 50%);
+  
+  /* Sacred Geometry Colors */
+  --midnight: hsl(220, 85%, 4%);
+  --forest: hsl(155, 45%, 8%);
+  --deep-teal: hsl(175, 70%, 15%);
+  --sacred-blue: hsl(215, 100%, 25%);
+  --ancient-green: hsl(150, 80%, 30%);
+  --ethereal-pink: hsl(338, 100%, 70%);
+  --neon-cyan: hsl(180, 100%, 50%);
+  --sacred-gold: hsl(38, 100%, 64%);
+  --mystic-purple: hsl(259, 86%, 69%);
+  
+  /* Font Variables */
+  --font-mystical: 'Cinzel', serif;
+  --font-modern: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cinzel', serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  --radius: 1rem;
+}
+
+.dark {
+  --background: hsl(210, 100%, 4%);
+  --foreground: hsl(200, 20%, 91%);
+  --card: hsl(210, 100%, 6%);
+  --card-foreground: hsl(200, 20%, 91%);
+  --popover: hsl(210, 100%, 4%);
+  --popover-foreground: hsl(200, 20%, 91%);
+  --primary: hsl(195, 100%, 50%);
+  --primary-foreground: hsl(210, 100%, 4%);
+  --secondary: hsl(215, 25%, 20%);
+  --secondary-foreground: hsl(200, 20%, 91%);
+  --muted: hsl(215, 25%, 10%);
+  --muted-foreground: hsl(200, 10%, 50%);
+  --accent: hsl(259, 86%, 69%);
+  --accent-foreground: hsl(210, 100%, 4%);
+  --destructive: hsl(0, 75%, 60%);
+  --destructive-foreground: hsl(200, 20%, 91%);
+  --border: hsl(215, 25%, 15%);
+  --input: hsl(215, 25%, 12%);
+  --ring: hsl(195, 100%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(135deg, var(--midnight), var(--deep-teal), var(--forest), var(--sacred-blue));
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .sacred-geometry {
+    background: radial-gradient(circle at 25% 25%, hsl(259, 86%, 69%, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, hsl(180, 100%, 50%, 0.1) 0%, transparent 50%);
+  }
+  
+  .ancient-texture {
+    background-image: 
+      linear-gradient(45deg, hsl(38, 100%, 64%, 0.02) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(38, 100%, 64%, 0.02) 25%, transparent 25%);
+    background-size: 40px 40px;
+  }
+  
+  .glow-border {
+    border: 1px solid hsl(180, 100%, 50%, 0.3);
+    box-shadow: 0 0 10px hsl(180, 100%, 50%, 0.2), inset 0 0 10px hsl(180, 100%, 50%, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glow-border:hover {
+    border-color: hsl(180, 100%, 50%, 0.6);
+    box-shadow: 0 0 20px hsl(180, 100%, 50%, 0.4), inset 0 0 20px hsl(180, 100%, 50%, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .sacred-button {
+    background: linear-gradient(135deg, hsl(259, 86%, 69%, 0.2), hsl(180, 100%, 50%, 0.2));
+    border: 1px solid hsl(38, 100%, 64%, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .sacred-button:hover {
+    background: linear-gradient(135deg, hsl(259, 86%, 69%, 0.4), hsl(180, 100%, 50%, 0.4));
+    border-color: hsl(38, 100%, 64%, 0.8);
+    box-shadow: 0 0 25px hsl(38, 100%, 64%, 0.3);
+  }
+  
+  .sigil-icon {
+    filter: drop-shadow(0 0 5px hsl(180, 100%, 50%, 0.5));
+  }
+  
+  .particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, hsl(38, 100%, 64%, 0.8), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .font-mystical {
+    font-family: var(--font-mystical);
+  }
+  
+  .font-modern {
+    font-family: var(--font-modern);
+  }
+}
+
+@layer utilities {
+  .text-midnight { color: var(--midnight); }
+  .text-forest { color: var(--forest); }
+  .text-deep-teal { color: var(--deep-teal); }
+  .text-sacred-blue { color: var(--sacred-blue); }
+  .text-ethereal-pink { color: var(--ethereal-pink); }
+  .text-neon-cyan { color: var(--neon-cyan); }
+  .text-sacred-gold { color: var(--sacred-gold); }
+  .text-mystic-purple { color: var(--mystic-purple); }
+  .text-ancient-green { color: var(--ancient-green); }
+  
+  .bg-midnight { background-color: var(--midnight); }
+  .bg-forest { background-color: var(--forest); }
+  .bg-deep-teal { background-color: var(--deep-teal); }
+  .bg-sacred-blue { background-color: var(--sacred-blue); }
+  .bg-ethereal-pink { background-color: var(--ethereal-pink); }
+  .bg-neon-cyan { background-color: var(--neon-cyan); }
+  .bg-sacred-gold { background-color: var(--sacred-gold); }
+  .bg-mystic-purple { background-color: var(--mystic-purple); }
+  .bg-ancient-green { background-color: var(--ancient-green); }
+  
+  .border-midnight { border-color: var(--midnight); }
+  .border-forest { border-color: var(--forest); }
+  .border-deep-teal { border-color: var(--deep-teal); }
+  .border-sacred-blue { border-color: var(--sacred-blue); }
+  .border-ethereal-pink { border-color: var(--ethereal-pink); }
+  .border-neon-cyan { border-color: var(--neon-cyan); }
+  .border-sacred-gold { border-color: var(--sacred-gold); }
+  .border-mystic-purple { border-color: var(--mystic-purple); }
+  .border-ancient-green { border-color: var(--ancient-green); }
+}
+
+/* Animation keyframes */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan); 
+  }
+  50% { 
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sacred-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes particle-drift {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sacred-spin {
+  animation: sacred-spin 20s linear infinite;
+}
+
+.animate-particle-drift {
+  animation: particle-drift 8s linear infinite;
+}
